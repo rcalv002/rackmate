@@ -1,0 +1,23 @@
+# Local Python environments. CadQuery environments are large and should not be committed.
+.venv/
+venv/
+env/
+
+# Python caches and local tooling state.
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Generated CAD files. Recreate these with:
+#   python generate.py
+output/*
+!output/.gitkeep
+
+# Common CAD/editor backup files.
+*.FCBak
+*.bak
+*.tmp
