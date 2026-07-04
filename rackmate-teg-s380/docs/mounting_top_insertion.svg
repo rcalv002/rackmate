@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">RackMate T1 top-view rail pocket and insertion concept</title>
+  <desc id="desc">Top-view diagram showing front ears, open rail pockets, inboard return arms, and tray body behind the rack rails.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 4 L 0 8 z" fill="#222222" />
+    </marker>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #111111; }
+      .label { font: 18px Arial, sans-serif; fill: #111111; }
+      .small { font: 15px Arial, sans-serif; fill: #333333; }
+      .tiny { font: 13px Arial, sans-serif; fill: #333333; }
+      .tray { fill: #d8e9ff; stroke: #1f5f99; stroke-width: 3; }
+      .ear { fill: #9ec8f4; stroke: #1f5f99; stroke-width: 3; }
+      .arm { fill: #6faee8; stroke: #1f5f99; stroke-width: 3; }
+      .rail { fill: #dddddd; stroke: #555555; stroke-width: 3; }
+      .pocket { fill: #fff4d6; stroke: #b07900; stroke-width: 2; stroke-dasharray: 8 5; }
+      .slot { fill: #ffffff; stroke: #111111; stroke-width: 2; }
+      .arrow { stroke: #222222; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .dim { stroke: #555555; stroke-width: 1.5; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="760" fill="#ffffff" />
+  <text x="60" y="55" class="title">Top view: ears in front, rail pocket, tray behind</text>
+  <text x="60" y="85" class="small">This is the shape the updated STEP should show. The gray rails occupy the empty pockets behind the blue ears.</text>
+
+  <text x="83" y="145" class="label">Front / you</text>
+  <text x="915" y="145" class="label">Rear / inside rack</text>
+  <line x1="210" y1="140" x2="900" y2="140" class="arrow" />
+
+  <!-- Tray body -->
+  <rect x="290" y="340" width="620" height="250" rx="4" class="tray" />
+  <rect x="290" y="322" width="620" height="38" rx="4" class="tray" />
+  <text x="500" y="625" class="label">tray body behind rail plane</text>
+
+  <!-- Rail pockets -->
+  <rect x="186" y="245" width="125" height="95" rx="4" class="pocket" />
+  <rect x="889" y="245" width="125" height="95" rx="4" class="pocket" />
+  <text x="145" y="225" class="small">left rail pocket</text>
+  <text x="850" y="225" class="small">right rail pocket</text>
+
+  <!-- Rack rails shown inside pockets -->
+  <rect x="203" y="260" width="85" height="62" rx="4" class="rail" />
+  <rect x="912" y="260" width="85" height="62" rx="4" class="rail" />
+  <text x="195" y="372" class="tiny">RackMate rail sits here</text>
+  <text x="895" y="372" class="tiny">RackMate rail sits here</text>
+
+  <!-- Printed ears in front of rails -->
+  <rect x="188" y="198" width="105" height="42" rx="4" class="ear" />
+  <rect x="907" y="198" width="105" height="42" rx="4" class="ear" />
+  <rect x="216" y="209" width="50" height="20" rx="10" class="slot" />
+  <rect x="935" y="209" width="50" height="20" rx="10" class="slot" />
+  <text x="130" y="185" class="small">printed ear in front</text>
+  <text x="840" y="185" class="small">printed ear in front</text>
+
+  <!-- Inboard return arms -->
+  <rect x="284" y="198" width="55" height="162" rx="3" class="arm" />
+  <rect x="861" y="198" width="55" height="162" rx="3" class="arm" />
+  <text x="345" y="278" class="small">inboard return arm</text>
+  <text x="690" y="278" class="small">inboard return arm</text>
+
+  <line x1="241" y1="440" x2="339" y2="360" class="arrow" />
+  <line x1="959" y1="440" x2="861" y2="360" class="arrow" />
+  <text x="325" y="455" class="small">angle in, then square up so rails enter pockets</text>
+
+  <line x1="188" y1="682" x2="1012" y2="682" class="dim" />
+  <text x="490" y="710" class="small">overall printed width stays just under the configured 256 mm bed</text>
+</svg>

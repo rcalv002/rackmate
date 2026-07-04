@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">RackMate T1 TEG-S380 split shelf assembly top view</title>
+  <desc id="desc">Top-view diagram showing the left shelf half with tongues sliding into right shelf half pockets, then the assembled shelf with seam bolts.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 4 L 0 8 z" fill="#333333" />
+    </marker>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #111111; }
+      .label { font: 18px Arial, sans-serif; fill: #111111; }
+      .small { font: 15px Arial, sans-serif; fill: #333333; }
+      .tiny { font: 13px Arial, sans-serif; fill: #333333; }
+      .left { fill: #d8e9ff; stroke: #1f5f99; stroke-width: 2; }
+      .right { fill: #dff1df; stroke: #2c7a2c; stroke-width: 2; }
+      .tongue { fill: #f7b267; stroke: #b35c00; stroke-width: 2; }
+      .pocket { fill: #ffffff; stroke: #2c7a2c; stroke-width: 2; stroke-dasharray: 8 5; }
+      .ear { fill: #c8dcf5; stroke: #1f5f99; stroke-width: 2; }
+      .slot { fill: #ffffff; stroke: #333333; stroke-width: 1.5; }
+      .bolt { fill: #ffffff; stroke: #111111; stroke-width: 2; }
+      .seam { stroke: #111111; stroke-width: 3; stroke-dasharray: 8 6; }
+      .arrow { stroke: #333333; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .dim { stroke: #555555; stroke-width: 1.5; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="760" fill="#ffffff" />
+  <text x="60" y="55" class="title">Split shelf assembly, top view</text>
+  <text x="60" y="85" class="small">Front mounting ears are at the bottom. The rear wall is at the top. Slide the left-half tongues into the right-half pockets.</text>
+
+  <!-- Exploded view -->
+  <text x="80" y="140" class="label">Exploded orientation</text>
+  <text x="80" y="165" class="small">Do not flip either part. Keep both mounting ears toward the rack front.</text>
+
+  <!-- Left half exploded -->
+  <rect x="100" y="220" width="260" height="255" rx="4" class="left" />
+  <rect x="80" y="470" width="70" height="58" rx="3" class="ear" />
+  <rect x="93" y="494" width="44" height="14" rx="7" class="slot" />
+  <rect x="352" y="242" width="38" height="43" rx="2" class="tongue" />
+  <rect x="352" y="326" width="38" height="43" rx="2" class="tongue" />
+  <rect x="352" y="410" width="38" height="43" rx="2" class="tongue" />
+  <line x1="360" y1="210" x2="360" y2="535" class="seam" />
+  <text x="118" y="212" class="small">LEFT STEP/STL</text>
+  <text x="132" y="552" class="tiny">left mounting ear</text>
+  <text x="248" y="265" class="tiny">3 tongues</text>
+  <text x="248" y="287" class="tiny">protrude right</text>
+
+  <!-- Right half exploded -->
+  <rect x="570" y="220" width="260" height="255" rx="4" class="right" />
+  <rect x="780" y="470" width="70" height="58" rx="3" class="right" />
+  <rect x="793" y="494" width="44" height="14" rx="7" class="slot" />
+  <rect x="570" y="242" width="44" height="43" rx="2" class="pocket" />
+  <rect x="570" y="326" width="44" height="43" rx="2" class="pocket" />
+  <rect x="570" y="410" width="44" height="43" rx="2" class="pocket" />
+  <line x1="570" y1="210" x2="570" y2="535" class="seam" />
+  <text x="650" y="212" class="small">RIGHT STEP/STL</text>
+  <text x="656" y="552" class="tiny">right mounting ear</text>
+  <text x="618" y="265" class="tiny">pockets face left</text>
+  <text x="618" y="287" class="tiny">at center seam</text>
+
+  <line x1="415" y1="350" x2="540" y2="350" class="arrow" />
+  <text x="428" y="330" class="small">slide together</text>
+
+  <!-- Assembled view -->
+  <text x="80" y="625" class="label">Assembled position</text>
+  <text x="80" y="650" class="small">The seam faces meet at X=0. Tongues sit inside the right-half pockets. Add two M3 screws through the seam holes from the top.</text>
+
+  <rect x="575" y="600" width="210" height="95" rx="4" class="left" />
+  <rect x="785" y="600" width="210" height="95" rx="4" class="right" />
+  <line x1="785" y1="590" x2="785" y2="705" class="seam" />
+  <rect x="785" y="610" width="34" height="18" rx="2" class="tongue" />
+  <rect x="785" y="638" width="34" height="18" rx="2" class="tongue" />
+  <rect x="785" y="666" width="34" height="18" rx="2" class="tongue" />
+  <circle cx="785" cy="628" r="8" class="bolt" />
+  <circle cx="785" cy="668" r="8" class="bolt" />
+  <text x="618" y="725" class="tiny">left half</text>
+  <text x="902" y="725" class="tiny">right half</text>
+  <text x="804" y="588" class="tiny">center seam / M3 clamp holes</text>
+
+  <line x1="575" y1="582" x2="995" y2="582" class="dim" />
+  <text x="675" y="572" class="tiny">assembled tray width: about 251.3 mm</text>
+</svg>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">RackMate T1 shelf side mounting stack</title>
+  <desc id="desc">Side-view diagram showing front-to-back order: screw head, printed ear, rack rail, and tray body extending rearward inside the rack.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 4 L 0 8 z" fill="#222222" />
+    </marker>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #111111; }
+      .label { font: 18px Arial, sans-serif; fill: #111111; }
+      .small { font: 15px Arial, sans-serif; fill: #333333; }
+      .tiny { font: 13px Arial, sans-serif; fill: #333333; }
+      .print { fill: #9ec8f4; stroke: #1f5f99; stroke-width: 3; }
+      .tray { fill: #d8e9ff; stroke: #1f5f99; stroke-width: 3; }
+      .rail { fill: #dddddd; stroke: #555555; stroke-width: 3; }
+      .screw { fill: #f4a261; stroke: #8a4a00; stroke-width: 2; }
+      .void { fill: #ffffff; stroke: #111111; stroke-width: 2; }
+      .arrow { stroke: #222222; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .axis { stroke: #777777; stroke-width: 1.5; stroke-dasharray: 8 6; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="700" fill="#ffffff" />
+  <text x="60" y="55" class="title">Side view: front-to-back mounting stack</text>
+  <text x="60" y="85" class="small">This shows one mounting ear from the side. The tray body goes inside the rack; the printed ear sits in front of the rail.</text>
+
+  <text x="95" y="168" class="label">Front of rack / you</text>
+  <text x="890" y="168" class="label">Inside rack / switch</text>
+  <line x1="210" y1="185" x2="970" y2="185" class="arrow" />
+
+  <!-- Printed ear in front of rail -->
+  <rect x="380" y="255" width="48" height="250" rx="4" class="print" />
+  <path d="M 390 370 h 28 a 14 14 0 0 1 0 28 h -28 a 14 14 0 0 1 0 -28 z" class="void" />
+  <text x="325" y="535" class="label">printed ear</text>
+  <text x="310" y="560" class="tiny">3.2 mm PETG flange</text>
+
+  <!-- Rack rail behind ear -->
+  <rect x="460" y="235" width="72" height="290" rx="4" class="rail" />
+  <circle cx="496" cy="384" r="18" class="void" />
+  <text x="445" y="565" class="label">RackMate rail</text>
+  <text x="432" y="590" class="tiny">threaded or through hole</text>
+
+  <!-- Tray behind rail -->
+  <rect x="532" y="440" width="430" height="42" rx="4" class="tray" />
+  <rect x="532" y="380" width="52" height="102" rx="4" class="tray" />
+  <text x="680" y="535" class="label">tray body extends rearward</text>
+  <text x="672" y="560" class="tiny">switch sits behind the rail plane</text>
+
+  <!-- Screw -->
+  <rect x="180" y="366" width="190" height="36" rx="18" class="screw" />
+  <circle cx="178" cy="384" r="34" class="screw" />
+  <rect x="428" y="376" width="330" height="16" rx="8" class="screw" />
+  <line x1="165" y1="384" x2="350" y2="384" class="arrow" />
+  <text x="105" y="330" class="label">screw goes this way</text>
+
+  <line x1="428" y1="210" x2="428" y2="610" class="axis" />
+  <line x1="532" y1="210" x2="532" y2="610" class="axis" />
+  <text x="370" y="220" class="tiny">printed ear back face</text>
+  <text x="520" y="220" class="tiny">rail/tray plane</text>
+
+  <text x="75" y="650" class="small">If your RackMate rail holes are threaded, the screw passes through the printed slot and threads into the rail. If the holes are through-holes, add washer/nut hardware behind the rail as appropriate.</text>
+</svg>

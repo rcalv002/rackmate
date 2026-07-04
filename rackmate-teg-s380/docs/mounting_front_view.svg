@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">RackMate T1 shelf front mounting view</title>
+  <desc id="desc">Front-view diagram showing the shelf mounting ears, RackMate rail holes, horizontal slots, and screw direction.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 4 L 0 8 z" fill="#222222" />
+    </marker>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #111111; }
+      .label { font: 18px Arial, sans-serif; fill: #111111; }
+      .small { font: 15px Arial, sans-serif; fill: #333333; }
+      .tiny { font: 13px Arial, sans-serif; fill: #333333; }
+      .shelf { fill: #d8e9ff; stroke: #1f5f99; stroke-width: 2; }
+      .ear { fill: #9ec8f4; stroke: #1f5f99; stroke-width: 3; }
+      .rail { fill: #dddddd; stroke: #555555; stroke-width: 3; }
+      .slot { fill: #ffffff; stroke: #111111; stroke-width: 2; }
+      .hole { fill: #ffffff; stroke: #555555; stroke-width: 2; }
+      .screw { fill: #f4a261; stroke: #8a4a00; stroke-width: 2; }
+      .dim { stroke: #555555; stroke-width: 1.5; fill: none; marker-end: url(#arrow); }
+      .axis { stroke: #777777; stroke-width: 1.5; stroke-dasharray: 8 6; }
+      .arrow { stroke: #222222; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="760" fill="#ffffff" />
+  <text x="60" y="55" class="title">How the front mounting ears attach</text>
+  <text x="60" y="85" class="small">This is the front view looking into the rack. Screws pass through the printed horizontal slots into the RackMate rail holes.</text>
+
+  <!-- Rack rails -->
+  <rect x="185" y="170" width="92" height="380" rx="4" class="rail" />
+  <rect x="923" y="170" width="92" height="380" rx="4" class="rail" />
+  <text x="170" y="145" class="label">Left rack rail</text>
+  <text x="908" y="145" class="label">Right rack rail</text>
+  <circle cx="231" cy="350" r="19" class="hole" />
+  <circle cx="969" cy="350" r="19" class="hole" />
+
+  <!-- Shelf front lip and ears -->
+  <rect x="330" y="390" width="540" height="42" rx="4" class="shelf" />
+  <text x="505" y="462" class="small">low front retaining lip / tray front</text>
+
+  <rect x="190" y="270" width="82" height="160" rx="4" class="ear" />
+  <rect x="928" y="270" width="82" height="160" rx="4" class="ear" />
+  <path d="M 208 350 h 46 a 16 16 0 0 1 0 32 h -46 a 16 16 0 0 1 0 -32 z" class="slot" transform="translate(0,-16)" />
+  <path d="M 946 350 h 46 a 16 16 0 0 1 0 32 h -46 a 16 16 0 0 1 0 -32 z" class="slot" transform="translate(0,-16)" />
+  <text x="148" y="585" class="small">printed left ear</text>
+  <text x="895" y="585" class="small">printed right ear</text>
+
+  <!-- Screw callouts -->
+  <circle cx="231" cy="350" r="12" class="screw" />
+  <circle cx="969" cy="350" r="12" class="screw" />
+  <line x1="70" y1="350" x2="188" y2="350" class="arrow" />
+  <line x1="1130" y1="350" x2="1012" y2="350" class="arrow" />
+  <text x="55" y="330" class="small">screw from front</text>
+  <text x="1008" y="330" class="small">screw from front</text>
+
+  <!-- Dimensions -->
+  <line x1="231" y1="635" x2="969" y2="635" class="dim" />
+  <line x1="231" y1="610" x2="231" y2="660" class="axis" />
+  <line x1="969" y1="610" x2="969" y2="660" class="axis" />
+  <text x="506" y="625" class="label">234.95 mm slot center spacing</text>
+
+  <line x1="130" y1="695" x2="1070" y2="695" class="dim" />
+  <text x="495" y="720" class="small">rack clear inside width reference: about 273 mm, configurable</text>
+
+  <text x="350" y="220" class="label">The STEP only includes the blue printed part.</text>
+  <text x="350" y="250" class="small">The gray rack rails are shown here only as a reference. In the real rack, align each printed slot over the rail hole and install a screw.</text>
+</svg>
