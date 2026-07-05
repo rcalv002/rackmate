@@ -23,7 +23,7 @@ class ShelfParameters:
     # rack assumptions.
     rack_clear_inside_width: float = 273.0
     mount_slot_center_spacing: float = 234.95
-    rack_rail_depth: float = 8.0
+    rack_rail_depth: float = 6.35
     rack_rail_clearance: float = 1.0
 
     # Target print bed used for split/full fit reporting.

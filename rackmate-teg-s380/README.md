@@ -54,7 +54,7 @@ All values are in `src/parameters.py`.
 | `switch_height` | 25.4 | TEG-S380 body height reference |
 | `rack_clear_inside_width` | 273.0 | Measured clear width between RackMate T1 front rails |
 | `mount_slot_center_spacing` | 234.95 | Left/right rack mounting slot center spacing |
-| `rack_rail_depth` | 8.0 | Front-to-back depth reserved behind each printed ear for the rack rail |
+| `rack_rail_depth` | 6.35 | Front-to-back depth reserved behind each printed ear for the 1/4 in rack rail |
 | `rack_rail_clearance` | 1.0 | Extra clearance behind the rail before the tray starts |
 | `print_bed_x` | 256.0 | Print-bed width used for fit checks |
 | `print_bed_y` | 256.0 | Print-bed depth used for fit checks |
