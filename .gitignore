@@ -21,7 +21,6 @@ __pycache__/
 # Generated CAD files. Recreate these with:
 #   cd rackmate-teg-s380
 #   python generate.py
-rackmate-teg-s380/output/*
 !rackmate-teg-s380/output/.gitkeep
 
 # Common CAD/editor backup files.
