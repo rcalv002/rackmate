@@ -138,6 +138,7 @@ def _build_tray_section(params: ShelfParameters, *, x_min: float, x_max: float) 
     )
 
     model = floor.union(front_lip).union(rear_wall)
+    model = _add_front_return_web(params, model, x_min=x_min, x_max=x_max)
 
     tray_left = -params.tray_outer_width / 2.0
     tray_right = params.tray_outer_width / 2.0
@@ -403,6 +404,37 @@ def _return_arm_x_range(
         inner_edge - params.mounting_return_arm_width_x,
         inner_edge + params.mounting_ear_thickness,
     )
+
+
+def _add_front_return_web(
+    params: ShelfParameters,
+    model: cq.Workplane,
+    *,
+    x_min: float,
+    x_max: float,
+) -> cq.Workplane:
+    web_min, web_max = _front_return_web_x_range(params)
+    clipped_min = max(x_min, web_min)
+    clipped_max = min(x_max, web_max)
+
+    if clipped_min >= clipped_max:
+        return model
+
+    web = _box(
+        clipped_min,
+        clipped_max,
+        params.mounting_ear_y_min,
+        params.tray_y_min,
+        0.0,
+        params.mounting_return_web_height,
+    )
+    return model.union(web)
+
+
+def _front_return_web_x_range(params: ShelfParameters) -> tuple[float, float]:
+    left_arm_min, left_arm_max = _return_arm_x_range(params, "left")
+    right_arm_min, right_arm_max = _return_arm_x_range(params, "right")
+    return left_arm_max, right_arm_min
 
 
 def _tray_y(params: ShelfParameters, local_y: float) -> float:

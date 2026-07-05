@@ -13,6 +13,7 @@
       .tray { fill: #d8e9ff; stroke: #1f5f99; stroke-width: 3; }
       .ear { fill: #9ec8f4; stroke: #1f5f99; stroke-width: 3; }
       .arm { fill: #6faee8; stroke: #1f5f99; stroke-width: 3; }
+      .web { fill: #b7daf8; stroke: #1f5f99; stroke-width: 3; }
       .rail { fill: #dddddd; stroke: #555555; stroke-width: 3; }
       .pocket { fill: #fff4d6; stroke: #b07900; stroke-width: 2; stroke-dasharray: 8 5; }
       .slot { fill: #ffffff; stroke: #111111; stroke-width: 2; }
@@ -57,8 +58,10 @@
   <!-- Inboard return arms -->
   <rect x="284" y="198" width="55" height="162" rx="3" class="arm" />
   <rect x="861" y="198" width="55" height="162" rx="3" class="arm" />
+  <rect x="339" y="198" width="522" height="162" rx="3" class="web" />
   <text x="345" y="278" class="small">inboard return arm</text>
   <text x="690" y="278" class="small">inboard return arm</text>
+  <text x="485" y="312" class="small">low central return web strengthens this whole span</text>
 
   <line x1="241" y1="440" x2="339" y2="360" class="arrow" />
   <line x1="959" y1="440" x2="861" y2="360" class="arrow" />

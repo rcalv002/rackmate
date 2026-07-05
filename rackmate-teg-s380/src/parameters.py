@@ -24,7 +24,7 @@ class ShelfParameters:
     rack_clear_inside_width: float = 273.0
     mount_slot_center_spacing: float = 234.95
     rack_rail_depth: float = 6.35
-    rack_rail_clearance: float = 1.0
+    rack_rail_clearance: float = 3.15
 
     # Target print bed used for split/full fit reporting.
     print_bed_x: float = 256.0
@@ -51,6 +51,7 @@ class ShelfParameters:
     mounting_ear_height: float = 28.0
     mounting_ear_thickness: float = 3.2
     mounting_return_arm_width_x: float = 8.0
+    mounting_return_web_height: float = 9.0
     mount_slot_width: float = 5.5
     mount_slot_length: float = 10.0
     mount_slot_edge_margin_x: float = 5.5
@@ -186,6 +187,7 @@ class ShelfParameters:
             ("rear_wall_thickness", self.rear_wall_thickness),
             ("mounting_ear_thickness", self.mounting_ear_thickness),
             ("mounting_return_arm_width_x", self.mounting_return_arm_width_x),
+            ("mounting_return_web_height", self.mounting_return_web_height),
         ):
             if value < self.minimum_structural_wall:
                 errors.append(
@@ -207,6 +209,8 @@ class ShelfParameters:
             errors.append("rack_rail_depth must be positive")
         if self.rack_rail_clearance < 0.0:
             errors.append("rack_rail_clearance cannot be negative")
+        if self.mounting_return_web_height > self.mounting_ear_height:
+            errors.append("mounting_return_web_height cannot exceed mounting_ear_height")
 
         slot_bottom = self.mount_slot_z_center - (self.mount_slot_width / 2.0)
         slot_top = self.mount_slot_z_center + (self.mount_slot_width / 2.0)

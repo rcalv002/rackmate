@@ -55,7 +55,7 @@ All values are in `src/parameters.py`.
 | `rack_clear_inside_width` | 273.0 | Measured clear width between RackMate T1 front rails |
 | `mount_slot_center_spacing` | 234.95 | Left/right rack mounting slot center spacing |
 | `rack_rail_depth` | 6.35 | Front-to-back depth reserved behind each printed ear for the 1/4 in rack rail |
-| `rack_rail_clearance` | 1.0 | Extra clearance behind the rail before the tray starts |
+| `rack_rail_clearance` | 3.15 | Extra clearance behind the rail before the tray starts, making the total pocket 9.5 mm |
 | `print_bed_x` | 256.0 | Print-bed width used for fit checks |
 | `print_bed_y` | 256.0 | Print-bed depth used for fit checks |
 | `side_clearance_each_side` | 1.8 | Clearance between switch and each side wall |
@@ -72,6 +72,7 @@ All values are in `src/parameters.py`.
 | `mounting_ear_height` | 28.0 | Front mounting ear height |
 | `mounting_ear_thickness` | 3.2 | Thickness of the forward mounting ears |
 | `mounting_return_arm_width_x` | 8.0 | Width of the inboard arms that connect front ears back to the tray |
+| `mounting_return_web_height` | 9.0 | Height of the low central web tying the front ear structure back into the tray |
 | `mount_slot_width` | 5.5 | Vertical height of each horizontal mounting slot |
 | `mount_slot_length` | 10.0 | Horizontal length of each mounting slot |
 | `mount_slot_edge_margin_x` | 5.5 | Material outside each slot end |
@@ -129,7 +130,7 @@ Open `docs/mounting_front_view.svg` for a front-view diagram showing how the ear
 Open `docs/mounting_side_stack.svg` for the side-view front-to-back screw stack.
 Open `docs/mounting_top_insertion.svg` for the top-view rail pocket and insertion concept.
 
-The tray body slides into the rack opening, behind the front rail plane. The printed mounting ears sit on the front face of the rails like normal rack ears. The model leaves an open rail pocket between the front ears and the tray body, sized by `rack_rail_depth` plus `rack_rail_clearance`. Narrow inboard return arms connect the ears back to the tray while leaving the rail area open.
+The tray body slides into the rack opening, behind the front rail plane. The printed mounting ears sit on the front face of the rails like normal rack ears. The model leaves an open rail pocket between the front ears and the tray body, sized by `rack_rail_depth` plus `rack_rail_clearance`. Narrow inboard return arms connect the ears back to the tray while leaving the rail area open. A low central return web spans the horizontal length between those arms, so the ear structure grabs much more of the tray body without blocking the side rail pockets.
 
 The screw order from the front is:
 
