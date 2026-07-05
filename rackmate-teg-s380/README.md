@@ -16,6 +16,8 @@ Running `python generate.py` creates:
 - `output/rackmate_t1_teg_s380_shelf_right.stl`
 - `output/rackmate_t1_mount_test_coupon.step`
 - `output/rackmate_t1_mount_test_coupon.stl`
+- `output/rackmate_t1_front_fit_coupon.step`
+- `output/rackmate_t1_front_fit_coupon.stl`
 
 The one-piece shelf is for larger printers or beds that can accept the full width. The split shelf is intended for 256 x 256 mm beds.
 
@@ -96,12 +98,13 @@ All values are in `src/parameters.py`.
 | `split_bolt_head_recess_diameter` | 7.0 | Top counterbore/recess diameter at seam |
 | `split_bolt_head_recess_depth` | 1.4 | Top counterbore/recess depth |
 | `coupon_connector_bar_height` | 5.0 | Low bar connecting coupon ears |
+| `front_fit_coupon_tray_depth` | 25.0 | Short tray depth used by the front rail-pocket fit coupon |
 | `stl_linear_tolerance` | 0.05 | STL tessellation tolerance |
 | `stl_angular_tolerance` | 0.08 | STL angular tessellation tolerance |
 
 ## Test Coupon
 
-Print `rackmate_t1_mount_test_coupon.stl` first. It contains the same left and right mounting ears and horizontal slots as the shelf, connected by a narrow low bar. Use it to verify:
+Print `rackmate_t1_mount_test_coupon.stl` first if you only need to verify screw spacing. It contains the same left and right mounting ears and horizontal slots as the shelf, connected by a narrow low bar. Use it to verify:
 
 - the 234.95 mm default mounting center spacing,
 - the 5.5 x 10 mm horizontal slot size,
@@ -109,6 +112,15 @@ Print `rackmate_t1_mount_test_coupon.stl` first. It contains the same left and r
 - whether your measured rack spacing needs adjustment.
 
 If the coupon does not fit, measure the horizontal center-to-center distance between the rack holes and update `mount_slot_center_spacing` in `src/parameters.py`, then rerun `python generate.py`.
+
+Print `rackmate_t1_front_fit_coupon.stl` before reprinting the full shelf when tuning the front fit. It includes the full-width front ears, 9.5 mm rail pockets, inboard return arms, central return web, front retaining lip, and only a short 25 mm tray stub. Use it to verify:
+
+- the rail pocket slides over the RackMate side rails,
+- the strengthened front web clears the rails,
+- the tray body can angle in and square up,
+- the screw slots align after the rails sit in the pockets.
+
+If the rail pocket is too tight or loose, adjust `rack_rail_depth` and `rack_rail_clearance`. Their sum is the total pocket depth.
 
 ## Printing
 

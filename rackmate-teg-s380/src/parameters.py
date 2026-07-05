@@ -86,6 +86,7 @@ class ShelfParameters:
 
     # Test coupon.
     coupon_connector_bar_height: float = 5.0
+    front_fit_coupon_tray_depth: float = 25.0
 
     # Export tessellation.
     stl_linear_tolerance: float = 0.05
@@ -211,6 +212,10 @@ class ShelfParameters:
             errors.append("rack_rail_clearance cannot be negative")
         if self.mounting_return_web_height > self.mounting_ear_height:
             errors.append("mounting_return_web_height cannot exceed mounting_ear_height")
+        if self.front_fit_coupon_tray_depth < self.front_wall_thickness + self.minimum_structural_wall:
+            errors.append("front_fit_coupon_tray_depth is too shallow to include a useful tray stub")
+        if self.front_fit_coupon_tray_depth > self.tray_outer_depth:
+            errors.append("front_fit_coupon_tray_depth cannot exceed tray_outer_depth")
 
         slot_bottom = self.mount_slot_z_center - (self.mount_slot_width / 2.0)
         slot_top = self.mount_slot_z_center + (self.mount_slot_width / 2.0)

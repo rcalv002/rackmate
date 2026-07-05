@@ -15,7 +15,7 @@ except ModuleNotFoundError as exc:
 
 from src.parameters import ShelfParameters
 from src.shelf import build_full_shelf, build_split_shelf, calculated_dimensions
-from src.test_coupon import build_mount_test_coupon
+from src.test_coupon import build_front_fit_coupon, build_mount_test_coupon
 
 
 ROOT = Path(__file__).resolve().parent
@@ -32,6 +32,7 @@ def main() -> None:
         "rackmate_t1_teg_s380_shelf_left": build_split_shelf(params, "left"),
         "rackmate_t1_teg_s380_shelf_right": build_split_shelf(params, "right"),
         "rackmate_t1_mount_test_coupon": build_mount_test_coupon(params),
+        "rackmate_t1_front_fit_coupon": build_front_fit_coupon(params),
     }
 
     print("Geometry validation:")
@@ -52,6 +53,8 @@ def main() -> None:
         OUTPUT / "rackmate_t1_teg_s380_shelf_right.stl",
         OUTPUT / "rackmate_t1_mount_test_coupon.step",
         OUTPUT / "rackmate_t1_mount_test_coupon.stl",
+        OUTPUT / "rackmate_t1_front_fit_coupon.step",
+        OUTPUT / "rackmate_t1_front_fit_coupon.stl",
     ]
     missing = [path for path in expected if not path.exists() or path.stat().st_size == 0]
     if missing:
