@@ -24,7 +24,7 @@ class ShelfParameters:
     rack_clear_inside_width: float = 273.0
     mount_slot_center_spacing: float = 234.95
     rack_rail_depth: float = 6.35
-    rack_rail_clearance: float = 3.15
+    rack_rail_clearance: float = 4.65
 
     # Target print bed used for split/full fit reporting.
     print_bed_x: float = 256.0
@@ -50,6 +50,7 @@ class ShelfParameters:
     # Front mounting ears and horizontal slots.
     mounting_ear_height: float = 28.0
     mounting_ear_thickness: float = 3.2
+    right_ear_inboard_shave: float = 2.0
     mounting_return_arm_width_x: float = 8.0
     mounting_return_web_height: float = 9.0
     mount_slot_width: float = 5.5
@@ -205,6 +206,14 @@ class ShelfParameters:
 
         if self.mounting_ear_width < self.mount_slot_length + (2.0 * self.minimum_structural_wall):
             errors.append("mounting ears do not leave the minimum material beside each slot")
+        if self.right_ear_inboard_shave < 0.0:
+            errors.append("right_ear_inboard_shave cannot be negative")
+        right_inboard_margin = self.mount_slot_edge_margin_x - self.right_ear_inboard_shave
+        if right_inboard_margin < self.minimum_structural_wall:
+            errors.append(
+                "right_ear_inboard_shave leaves too little material beside the right slot "
+                f"({right_inboard_margin:.2f} mm < {self.minimum_structural_wall:.2f} mm)"
+            )
 
         if self.rack_rail_depth <= 0.0:
             errors.append("rack_rail_depth must be positive")

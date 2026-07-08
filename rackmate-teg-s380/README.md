@@ -57,7 +57,7 @@ All values are in `src/parameters.py`.
 | `rack_clear_inside_width` | 273.0 | Measured clear width between RackMate T1 front rails |
 | `mount_slot_center_spacing` | 234.95 | Left/right rack mounting slot center spacing |
 | `rack_rail_depth` | 6.35 | Front-to-back depth reserved behind each printed ear for the 1/4 in rack rail |
-| `rack_rail_clearance` | 3.15 | Extra clearance behind the rail before the tray starts, making the total pocket 9.5 mm |
+| `rack_rail_clearance` | 4.65 | Extra clearance behind the rail before the tray starts, making the total pocket 11.0 mm |
 | `print_bed_x` | 256.0 | Print-bed width used for fit checks |
 | `print_bed_y` | 256.0 | Print-bed depth used for fit checks |
 | `side_clearance_each_side` | 1.8 | Clearance between switch and each side wall |
@@ -73,6 +73,7 @@ All values are in `src/parameters.py`.
 | `rear_wall_height` | 9.0 | Rear retaining wall height above tray floor |
 | `mounting_ear_height` | 28.0 | Front mounting ear height |
 | `mounting_ear_thickness` | 3.2 | Thickness of the forward mounting ears |
+| `right_ear_inboard_shave` | 2.0 | Material removed from the inboard/left edge of the right mounting ear for AC-input clearance |
 | `mounting_return_arm_width_x` | 8.0 | Width of the inboard arms that connect front ears back to the tray |
 | `mounting_return_web_height` | 9.0 | Height of the low central web tying the front ear structure back into the tray |
 | `mount_slot_width` | 5.5 | Vertical height of each horizontal mounting slot |
@@ -113,7 +114,7 @@ Print `rackmate_t1_mount_test_coupon.stl` first if you only need to verify screw
 
 If the coupon does not fit, measure the horizontal center-to-center distance between the rack holes and update `mount_slot_center_spacing` in `src/parameters.py`, then rerun `python generate.py`.
 
-Print `rackmate_t1_front_fit_coupon.stl` before reprinting the full shelf when tuning the front fit. It includes the full-width front ears, 9.5 mm rail pockets, inboard return arms, central return web, front retaining lip, and only a short 25 mm tray stub. Use it to verify:
+Print `rackmate_t1_front_fit_coupon.stl` before reprinting the full shelf when tuning the front fit. It includes the full-width front ears, 11.0 mm rail pockets, inboard return arms, central return web, front retaining lip, and only a short 25 mm tray stub. Use it to verify:
 
 - the rail pocket slides over the RackMate side rails,
 - the strengthened front web clears the rails,

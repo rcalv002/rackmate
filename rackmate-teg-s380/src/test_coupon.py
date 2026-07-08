@@ -11,6 +11,7 @@ from .shelf import (
     _apply_practical_fillets,
     _box,
     _cut_mounting_slots,
+    _mounting_ear_x_range,
     _tray_y,
 )
 
@@ -20,22 +21,22 @@ def build_mount_test_coupon(params: ShelfParameters) -> cq.Workplane:
 
     params.validate()
 
-    left_center = -params.mount_slot_center_spacing / 2.0
-    right_center = params.mount_slot_center_spacing / 2.0
-    x_min = left_center - (params.mounting_ear_width / 2.0)
-    x_max = right_center + (params.mounting_ear_width / 2.0)
+    left_ear_x_min, left_ear_x_max = _mounting_ear_x_range(params, "left")
+    right_ear_x_min, right_ear_x_max = _mounting_ear_x_range(params, "right")
+    x_min = left_ear_x_min
+    x_max = right_ear_x_max
 
     left_ear = _box(
-        x_min,
-        x_min + params.mounting_ear_width,
+        left_ear_x_min,
+        left_ear_x_max,
         params.mounting_ear_y_min,
         params.mounting_ear_y_max,
         0.0,
         params.mounting_ear_height,
     )
     right_ear = _box(
-        x_max - params.mounting_ear_width,
-        x_max,
+        right_ear_x_min,
+        right_ear_x_max,
         params.mounting_ear_y_min,
         params.mounting_ear_y_max,
         0.0,

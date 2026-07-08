@@ -177,10 +177,10 @@ def _add_mounting_ear(
     *,
     side: Literal["left", "right"],
 ) -> cq.Workplane:
-    center_x = _slot_center_x(params, side)
+    x_min, x_max = _mounting_ear_x_range(params, side)
     ear = _box(
-        center_x - (params.mounting_ear_width / 2.0),
-        center_x + (params.mounting_ear_width / 2.0),
+        x_min,
+        x_max,
         params.mounting_ear_y_min,
         params.mounting_ear_y_max,
         0.0,
@@ -363,7 +363,7 @@ def _slot_center_x(params: ShelfParameters, side: Literal["left", "right"]) -> f
 def _calculated_split_left_width(params: ShelfParameters) -> float:
     x_min = min(
         -params.tray_outer_width / 2.0,
-        _slot_center_x(params, "left") - (params.mounting_ear_width / 2.0),
+        _mounting_ear_x_range(params, "left")[0],
     )
     x_max = max(0.0, params.split_tongue_length_x)
     return x_max - x_min
@@ -373,9 +373,24 @@ def _calculated_split_right_width(params: ShelfParameters) -> float:
     x_min = 0.0
     x_max = max(
         params.tray_outer_width / 2.0,
-        _slot_center_x(params, "right") + (params.mounting_ear_width / 2.0),
+        _mounting_ear_x_range(params, "right")[1],
     )
     return x_max - x_min
+
+
+def _mounting_ear_x_range(
+    params: ShelfParameters,
+    side: Literal["left", "right"],
+) -> tuple[float, float]:
+    center_x = _slot_center_x(params, side)
+    half_ear = params.mounting_ear_width / 2.0
+    x_min = center_x - half_ear
+    x_max = center_x + half_ear
+
+    if side == "right":
+        x_min += params.right_ear_inboard_shave
+
+    return x_min, x_max
 
 
 def _return_arm_x_range(
@@ -389,17 +404,16 @@ def _return_arm_x_range(
     the printed part remains mechanically connected.
     """
 
-    center_x = _slot_center_x(params, side)
-    half_ear = params.mounting_ear_width / 2.0
+    ear_x_min, ear_x_max = _mounting_ear_x_range(params, side)
 
     if side == "left":
-        inner_edge = center_x + half_ear
+        inner_edge = ear_x_max
         return (
             inner_edge - params.mounting_ear_thickness,
             inner_edge + params.mounting_return_arm_width_x,
         )
 
-    inner_edge = center_x - half_ear
+    inner_edge = ear_x_min
     return (
         inner_edge - params.mounting_return_arm_width_x,
         inner_edge + params.mounting_ear_thickness,
